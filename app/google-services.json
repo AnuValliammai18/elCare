@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1029066101560",
+    "firebase_url": "https://elcare-b57a0.firebaseio.com",
+    "project_id": "elcare-b57a0",
+    "storage_bucket": "elcare-b57a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029066101560:android:2dcb7ea5793bf7070667cd",
+        "android_client_info": {
+          "package_name": "com.example.elcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029066101560-nc6j7fp1p1oir4lttg1tjrubpn9ctr40.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.elcare",
+            "certificate_hash": "1546ee260d11a3b22e092f14d1ae06fc88eaf057"
+          }
+        },
+        {
+          "client_id": "1029066101560-kokkimgv4ta5r4umroe3v3njqhnnr395.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHOGg5scKi0nE9bh3M7AifNLIGKXdWmMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029066101560-kokkimgv4ta5r4umroe3v3njqhnnr395.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

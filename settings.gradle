@@ -1,0 +1,2 @@
+rootProject.name='elCare'
+include ':app'
