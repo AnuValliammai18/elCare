@@ -2,4 +2,10 @@
     <string name="app_name">elCare</string>
     <string name="facebook_application_id">610274216494799</string>
     <string name="facebook_login_protocol_scheme">fb610274216494799</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_health_detail">HealthDetailActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

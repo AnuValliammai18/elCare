@@ -7,6 +7,19 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/monitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Monitor Now"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.043" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="101dp"
@@ -25,6 +38,8 @@
         android:layout_height="26dp"
         android:layout_marginTop="36dp"
         android:hint="Name"
+        android:textColor="#090808"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -36,6 +51,8 @@
         android:layout_height="34dp"
         android:layout_marginTop="36dp"
         android:hint="Age"
+        android:textColor="#090808"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -46,22 +63,26 @@
         android:layout_width="272dp"
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
+        android:gravity="fill"
         android:text="Contact Person Detail"
+        android:textColor="#090808"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.633"
-        tools:layout_editor_absoluteX="4dp">
+        app:layout_constraintVertical_bias="0.498"
+        tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,18 +93,24 @@
                 android:id="@+id/contactName"
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
+                android:textColor="#090808"
+                android:textSize="14sp"
                 android:hint="Contact Name" />
 
             <TextView
                 android:id="@+id/contactPhone"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:textColor="#090808"
+                android:textSize="14sp"
                 android:hint="Contact Phone Number" />
 
             <TextView
                 android:id="@+id/contactAddress"
                 android:layout_width="match_parent"
                 android:layout_height="107dp"
+                android:textColor="#090808"
+                android:textSize="14sp"
                 android:hint="Contact Address" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -96,7 +123,9 @@
         android:text="Show Status"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.043" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
