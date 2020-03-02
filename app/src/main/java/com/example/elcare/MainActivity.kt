@@ -28,23 +28,23 @@ class MainActivity : AppCompatActivity() {
     private val database = FirebaseDatabase.getInstance()
     private val dbref = database.reference
     lateinit var uid: String
-    //  lateinit var healthRecord: HealthRecord
+    lateinit var healthRecord: HealthRecord
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         userSignIn()
 
-        /*  show.setOnClickListener {
-              val intent = Intent(this, CurrentStatusActivity::class.java)
-              intent.apply {
-                  putExtra("bp", healthRecord.bp)
-                  putExtra("glucose", healthRecord.glucose)
-                  putExtra("heartrate", healthRecord.heartRate)
-                  putExtra("uid", uid)
-              }
-              startActivity(intent)
-          }*/
+        show.setOnClickListener {
+            val intent = Intent(this, CurrentStatusActivity::class.java)
+            intent.apply {
+                putExtra("bp", healthRecord.bp)
+                putExtra("glucose", healthRecord.glucose)
+                putExtra("heartrate", healthRecord.heartRate)
+                putExtra("uid", uid)
+            }
+            startActivity(intent)
+        }
 
         monitor.setOnClickListener {
             val intent = Intent(this, MonitorActivity::class.java)
@@ -100,9 +100,9 @@ class MainActivity : AppCompatActivity() {
                                     contactAddress.text = it.contactAddress
                                     contactPhone.text = it.contactPhone.toString()
                                 }
-                                //     val health = person.child("HealthRecord").children.last()
-                                //     val h = health.getValue(HealthRecord::class.java)
-                                //     healthRecord = h!!
+                                val health = person.child("HealthRecord").children.last()
+                                val h = health.getValue(HealthRecord::class.java)
+                                healthRecord = h!!
                             }
                         }
                     }

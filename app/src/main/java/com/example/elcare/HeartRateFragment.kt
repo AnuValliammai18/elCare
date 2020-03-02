@@ -44,15 +44,16 @@ class HeartRateFragment : Fragment() {
                         heartRateval.add(Entry(c++.toFloat(), b))
                     }
                 }
+
+                val lineDataSet = LineDataSet(heartRateval, "Heart Beat Rate")
+                val dataset = arrayListOf<ILineDataSet>()
+                dataset.add(lineDataSet)
+                val data = LineData(dataset)
+                heartRateChart.data = data
+                heartRateChart.description.text = "Days"
+                heartRateChart.invalidate()
             }
         }
         databaseReference.addValueEventListener(healthRecordListener)
-        val lineDataSet = LineDataSet(heartRateval, "Heart Beat Rate")
-        val dataset = arrayListOf<ILineDataSet>()
-        dataset.add(lineDataSet)
-        val data = LineData(dataset)
-        heartRateChart.data = data
-        heartRateChart.description.text = "Days"
-
     }
 }
