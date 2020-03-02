@@ -1,8 +1,10 @@
-package com.example.elcare
+package com.example.elcare.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.elcare.R
+import com.example.elcare.adapters.TabAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_health_detail.*
 

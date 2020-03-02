@@ -1,10 +1,13 @@
-package com.example.elcare
+package com.example.elcare.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.elcare.R
+import com.example.elcare.model.HealthRecord
+import com.example.elcare.ui.HealthDetailActivity
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -13,23 +16,24 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.fragment_glucose.*
+import kotlinx.android.synthetic.main.fragment_heart_rate.*
 
-
-class GlucoseFragment : Fragment() {
-
+class HeartRateFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_glucose, container, false)
+    ): View? {
+        return inflater.inflate(R.layout.fragment_heart_rate, container, false)
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val healthDetailActivity = activity as HealthDetailActivity
         val uid: String = healthDetailActivity.uid
+        val heartRateval = arrayListOf<Entry>()
         val databaseReference =
             FirebaseDatabase.getInstance().reference.child(uid).child("HealthRecord")
-        val glucoseval = arrayListOf<Entry>()
         val healthRecordListener = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
             }
@@ -39,19 +43,20 @@ class GlucoseFragment : Fragment() {
                 for (health in p0.children) {
                     val h = health.getValue(HealthRecord::class.java)
                     h?.let {
-                        glucoseval.add(Entry(c++.toFloat(), it.glucose.toFloat()))
+                        val b = it.heartRate.toFloat()
+                        heartRateval.add(Entry(c++.toFloat(), b))
                     }
                 }
+                val lineDataSet = LineDataSet(heartRateval, "Heart Beat Rate")
+                val dataset = arrayListOf<ILineDataSet>()
+                dataset.add(lineDataSet)
+                val data = LineData(dataset)
+                heartRateChart.data = data
+                heartRateChart.description.text = "Days"
+                heartRateChart.invalidate()
             }
         }
         databaseReference.addValueEventListener(healthRecordListener)
-        display.setOnClickListener {
-            val lineDataSet = LineDataSet(glucoseval, "Glucose Level")
-            val dataset = arrayListOf<ILineDataSet>()
-            dataset.add(lineDataSet)
-            val data = LineData(dataset)
-            glucoseChart.data = data
-            glucoseChart.description.text = "Days"
-        }
+
     }
 }

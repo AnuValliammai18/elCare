@@ -1,4 +1,4 @@
-package com.example.elcare
+package com.example.elcare.model
 
 data class Person(
     val age:Int=0,

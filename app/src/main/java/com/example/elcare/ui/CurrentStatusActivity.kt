@@ -1,9 +1,10 @@
-package com.example.elcare
+package com.example.elcare.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.elcare.R
 import kotlinx.android.synthetic.main.activity_currentstatus.*
 
 @SuppressLint("Registered")

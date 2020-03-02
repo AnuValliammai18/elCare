@@ -1,9 +1,12 @@
-package com.example.elcare
+package com.example.elcare.adapters
 
 import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.elcare.ui.fragments.BPFragment
+import com.example.elcare.ui.fragments.GlucoseFragment
+import com.example.elcare.ui.fragments.HeartRateFragment
 
 class TabAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
