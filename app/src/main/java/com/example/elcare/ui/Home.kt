@@ -9,15 +9,16 @@ class Home : Application() {
         super.onCreate()
         val firebaseAuth = FirebaseAuth.getInstance()
         val firebaseUser = firebaseAuth.currentUser
-        val uid = firebaseAuth.uid
         lateinit var intent: Intent
-        if (uid == "CyXcFYsmt7NV3UcPpHIEarI7nLh2") {
-            intent = Intent(this, NewUser::class.java)
-        } else if (firebaseUser != null) {
-            intent = Intent(this, UserDetailActivity::class.java)
-        } else {
-            intent = Intent(this, LoginActivity::class.java)
+        intent = when {
+            firebaseUser != null -> {
+                Intent(this, UserDetailActivity::class.java)
+            }
+            else -> {
+                Intent(this, LoginActivity::class.java)
+            }
         }
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }

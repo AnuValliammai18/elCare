@@ -17,4 +17,16 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="contact_phone_number">Contact Phone Number</string>
+    <string name="email">Email</string>
+    <string name="contact_address">Contact Address</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="show_status">Show Status</string>
+    <string name="monitor_now">Monitor Now</string>
+    <string name="contact_person_detail">Contact Person Detail</string>
+    <string name="age">Age</string>
+    <string name="name">Name</string>
+    <string name="glucose_level">Glucose Level</string>
+    <string name="heart_beat_rate">Heart Beat Rate</string>
+    <string name="bp_rate">BP Rate</string>
 </resources>

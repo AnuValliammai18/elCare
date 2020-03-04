@@ -9,11 +9,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/elcarelauncher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.LoginActivity"></activity>
-        <activity android:name=".ui.NewUser" />
+        <activity android:name=".ui.NewUserActivity" />
         <activity android:name=".ui.HealthDetailActivity" />
         <activity android:name=".ui.CurrentStatusActivity" />
         <activity android:name=".ui.MonitorActivity" />
@@ -21,7 +21,6 @@
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

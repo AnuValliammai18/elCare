@@ -1,6 +1,8 @@
 package com.example.elcare.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.elcare.R
@@ -16,7 +18,7 @@ class MonitorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitor)
         val uid = FirebaseAuth.getInstance().uid!!
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         upload.setOnClickListener {
             val bp = bpText.text.toString()
             val glucose = glucoseText.text.toString()
@@ -33,11 +35,15 @@ class MonitorActivity : AppCompatActivity() {
             bpText.text.clear()
             glucoseText.text.clear()
             heartBeatText.text.clear()
+            startActivity(Intent(this, UserDetailActivity::class.java))
         }
     }
 
-    override fun onNavigateUp(): Boolean {
-        finish()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+        }
         return true
     }
+
 }
