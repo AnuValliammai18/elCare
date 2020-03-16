@@ -11,11 +11,14 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_health_detail.*
 
 class HealthDetailActivity : AppCompatActivity() {
-    lateinit var viewModel: UserDetailViewModel
+    lateinit var viewModel: HeathDetailViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_health_detail)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Health Detail"
+
         view_pager2.adapter = TabAdapter(this)
         Log.i("tab", "adapter set")
         TabLayoutMediator(tab_layout, view_pager2,
@@ -32,7 +35,7 @@ class HealthDetailActivity : AppCompatActivity() {
                     }
                 }
             }).attach()
-        viewModel = ViewModelProvider(this).get(UserDetailViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HeathDetailViewModel::class.java)
         viewModel.getHealthRecord()
     }
 

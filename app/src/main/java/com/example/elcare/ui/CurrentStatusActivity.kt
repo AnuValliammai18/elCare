@@ -16,9 +16,10 @@ class CurrentStatusActivity : AppCompatActivity() {
         setContentView(R.layout.activity_currentstatus)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Current Status"
 
-        val viewmodel = ViewModelProvider(this).get(UserDetailViewModel::class.java)
-        viewmodel.getPerson()
+        val viewmodel = ViewModelProvider(this).get(HeathDetailViewModel::class.java)
+        viewmodel.getCurrentHealthStatus()
         viewmodel._healthrecord.observe(this, Observer {
             heartbeatLevel.apply {
                 progress = it.heartRate.toFloat() / 360 * 100
@@ -35,8 +36,11 @@ class CurrentStatusActivity : AppCompatActivity() {
         })
 
         detailBtn.setOnClickListener {
+            detailBtn.isClickable = false
             val intent = Intent(this, HealthDetailActivity::class.java)
             startActivity(intent)
+            detailBtn.isClickable = true
+
         }
     }
 

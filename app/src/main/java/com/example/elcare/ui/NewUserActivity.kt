@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.ImageButton
 import android.widget.Toast
@@ -17,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_new_user.*
-
 
 class NewUserActivity : AppCompatActivity() {
 
@@ -37,7 +37,18 @@ class NewUserActivity : AppCompatActivity() {
         }
 
         create.setOnClickListener {
-            uploadData()
+            if (name.text != null && age.text != null && contactName.text != null && contactPhone.text != null) {
+                create.isEnabled = false
+                progressBar3.visibility = View.VISIBLE
+                name.isEnabled = false
+                age.isEnabled = false
+                contactName.isEnabled = false
+                contactPhone.isEnabled = false
+                contactAddress2.isEnabled = false
+                email.isEnabled = false
+                uploadData()
+            } else
+                Toast.makeText(this, "Fill all Data", Toast.LENGTH_SHORT).show()
         }
     }
 

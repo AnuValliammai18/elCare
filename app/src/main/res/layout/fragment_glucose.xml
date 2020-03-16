@@ -9,7 +9,7 @@
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/glucoseChart"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="310dp"
         android:layout_gravity="center"
         android:background="#FFFFFF"

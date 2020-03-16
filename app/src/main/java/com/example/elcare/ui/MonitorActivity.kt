@@ -17,6 +17,9 @@ class MonitorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitor)
+
+        supportActionBar?.title = "Monitor"
+
         val uid = FirebaseAuth.getInstance().uid!!
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         upload.setOnClickListener {

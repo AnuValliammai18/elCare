@@ -3,14 +3,13 @@ package com.example.elcare.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.elcare.R
-
 import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.activity_user_detail.*
 
@@ -20,10 +19,15 @@ class UserDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_detail)
+        supportActionBar?.title = "User Detail"
+
         val viewmodel = ViewModelProvider(this).get(UserDetailViewModel::class.java)
         viewmodel.getPerson()
-        viewmodel._person.observe(this, Observer {
 
+        viewmodel._person.observe(this, Observer {
+            progressBar2.visibility = View.VISIBLE
+            contactTV.visibility = View.VISIBLE
+            pic.visibility = View.VISIBLE
             name.text = it.name
             ageTV.text = it.age.toString()
             contactName.text = it.contactname
@@ -34,6 +38,7 @@ class UserDetailActivity : AppCompatActivity() {
             show.isEnabled = true
             monitor.isEnabled = true
         })
+
         show.setOnClickListener {
             val intent = Intent(this, CurrentStatusActivity::class.java)
             startActivity(intent)
