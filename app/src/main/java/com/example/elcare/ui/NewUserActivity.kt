@@ -93,7 +93,7 @@ class NewUserActivity : AppCompatActivity() {
             imageUri = data.data
             Glide.with(this).load(imageUri).into(imageView)
         } else if (requestCode == 200 && resultCode == Activity.RESULT_OK) {
-            startActivity(Intent(this, UserDetailActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
         }
     }
 

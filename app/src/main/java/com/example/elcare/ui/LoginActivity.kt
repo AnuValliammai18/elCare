@@ -53,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
                 intent = if (metadata.creationTimestamp == metadata.lastSignInTimestamp) {
                     Intent(this, NewUserActivity::class.java)
                 } else {
-                    Intent(this, UserDetailActivity::class.java)
+                    Intent(this, HomeActivity::class.java)
                 }
 
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1029066101560:android:2dcb7ea5793bf7070667cd",
+        "mobilesdk_app_id": "1:1029066101560:android:cce4213cbe05e01d0667cd",
         "android_client_info": {
           "package_name": "com.example.elcare"
         }
@@ -19,6 +19,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.elcare",
+            "certificate_hash": "1546ee260d11a3b22e092f14d1ae06fc88eaf057"
+          }
+        },
+        {
+          "client_id": "1029066101560-kokkimgv4ta5r4umroe3v3njqhnnr395.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHOGg5scKi0nE9bh3M7AifNLIGKXdWmMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029066101560-kokkimgv4ta5r4umroe3v3njqhnnr395.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029066101560:android:f996d384373734b40667cd",
+        "android_client_info": {
+          "package_name": "com.example.elcareapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029066101560-j9u2tq8ns7u4vb2cs6rov9nqrear53ag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.elcareapp",
             "certificate_hash": "1546ee260d11a3b22e092f14d1ae06fc88eaf057"
           }
         },

@@ -1,4 +1,4 @@
-package com.example.elcare.ui
+package com.example.elcare.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,6 +19,7 @@ class UserDetailViewModel : ViewModel() {
         val personListener = object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
             }
+
             override fun onDataChange(p0: DataSnapshot) {
                 val person = p0.child(uid).getValue(Person::class.java)
                 _person.value = person

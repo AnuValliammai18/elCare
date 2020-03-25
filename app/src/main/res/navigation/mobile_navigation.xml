@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    android:label="Home"
+    app:startDestination="@id/blankFragment">
+
+    <activity
+        android:id="@+id/userDetailActivity"
+        android:name="com.example.elcare.ui.UserDetailActivity"
+        android:label="activity_user_detail"
+        tools:layout="@layout/activity_user_detail" />
+    <activity
+        android:id="@+id/currentStatusActivity"
+        android:name="com.example.elcare.ui.CurrentStatusActivity"
+        android:label="CurrentStatusActivity" />
+    <activity
+        android:id="@+id/healthDetailActivity"
+        android:name="com.example.elcare.ui.HealthDetailActivity"
+        android:label="activity_health_detail"
+        tools:layout="@layout/activity_health_detail" />
+    <activity
+        android:id="@+id/monitorActivity"
+        android:name="com.example.elcare.ui.MonitorActivity"
+        android:label="MonitorActivity" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.elcare.ui.fragments.BlankFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_blank" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.elcare.ui.LoginActivity"
+        android:label="LoginActivity" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.elcare.ui.fragments.AboutFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about" />
+</navigation>

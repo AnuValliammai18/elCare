@@ -12,7 +12,7 @@ class Home : Application() {
         lateinit var intent: Intent
         intent = when {
             firebaseUser != null -> {
-                Intent(this, UserDetailActivity::class.java)
+                Intent(this, HomeActivity::class.java)
             }
             else -> {
                 Intent(this, LoginActivity::class.java)

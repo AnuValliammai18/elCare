@@ -1,4 +1,4 @@
-package com.example.elcare.ui
+package com.example.elcare.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

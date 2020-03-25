@@ -18,6 +18,9 @@
         <activity android:name=".ui.CurrentStatusActivity" />
         <activity android:name=".ui.MonitorActivity" />
         <activity android:name=".ui.UserDetailActivity" />
+        <activity
+            android:name=".ui.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

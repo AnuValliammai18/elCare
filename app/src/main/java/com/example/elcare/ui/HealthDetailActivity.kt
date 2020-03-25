@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.elcare.R
 import com.example.elcare.adapters.TabAdapter
+import com.example.elcare.viewmodel.HeathDetailViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_health_detail.*
 

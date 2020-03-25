@@ -41,12 +41,10 @@ class MonitorActivity : AppCompatActivity() {
             startActivity(Intent(this, UserDetailActivity::class.java))
         }
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
         }
         return true
     }
-
 }

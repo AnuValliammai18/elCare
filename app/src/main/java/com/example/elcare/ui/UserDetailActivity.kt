@@ -3,6 +3,7 @@ package com.example.elcare.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.elcare.R
+import com.example.elcare.viewmodel.UserDetailViewModel
 import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.activity_user_detail.*
 
@@ -20,6 +22,7 @@ class UserDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_detail)
         supportActionBar?.title = "User Detail"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val viewmodel = ViewModelProvider(this).get(UserDetailViewModel::class.java)
         viewmodel.getPerson()
@@ -66,8 +69,10 @@ class UserDetailActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        finishAffinity()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+        }
+        return true
     }
 }

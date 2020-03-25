@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.elcare.R
+import com.example.elcare.viewmodel.HeathDetailViewModel
 import kotlinx.android.synthetic.main.activity_currentstatus.*
 
 class CurrentStatusActivity : AppCompatActivity() {
