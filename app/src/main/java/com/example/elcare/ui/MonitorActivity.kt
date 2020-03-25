@@ -38,7 +38,7 @@ class MonitorActivity : AppCompatActivity() {
             bpText.text.clear()
             glucoseText.text.clear()
             heartBeatText.text.clear()
-            startActivity(Intent(this, UserDetailActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
