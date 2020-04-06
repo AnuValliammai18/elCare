@@ -22,23 +22,33 @@ class MonitorActivity : AppCompatActivity() {
 
         val uid = FirebaseAuth.getInstance().uid!!
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         upload.setOnClickListener {
-            val bp = bpText.text.toString()
-            val glucose = glucoseText.text.toString()
-            val heartBeat = heartBeatText.text.toString()
-            val healthRecord = HealthRecord(
-                bp.toInt(),
-                glucose.toInt(),
-                heartBeat.toInt()
-            )
-            val databaseReference =
-                FirebaseDatabase.getInstance().reference.child(uid).child("HealthRecord")
-            databaseReference.push().setValue(healthRecord)
-            Toast.makeText(this, "Data Uploaded", Toast.LENGTH_SHORT).show()
-            bpText.text.clear()
-            glucoseText.text.clear()
-            heartBeatText.text.clear()
-            startActivity(Intent(this, HomeActivity::class.java))
+            if (bpText.text.toString() != "" && glucoseText.text.toString() != "" && heartBeatText.text.toString() != "") {
+                upload.isEnabled = false
+                val bp = bpText.text.toString()
+                val glucose = glucoseText.text.toString()
+                val heartBeat = heartBeatText.text.toString()
+                val healthRecord = HealthRecord(
+                    bp.toInt(),
+                    glucose.toInt(),
+                    heartBeat.toInt()
+                )
+                val databaseReference =
+                    FirebaseDatabase.getInstance().reference.child(uid).child("HealthRecord")
+                databaseReference.push().setValue(healthRecord)
+                Toast.makeText(this, "Data Uploaded", Toast.LENGTH_SHORT).show()
+                bpText.text.clear()
+                glucoseText.text.clear()
+                heartBeatText.text.clear()
+                startActivity(Intent(this, HomeActivity::class.java))
+            } else {
+                Toast.makeText(
+                    this,
+                    "Blood Pressure, Glucose and Heart Rate fields can't be empty",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
