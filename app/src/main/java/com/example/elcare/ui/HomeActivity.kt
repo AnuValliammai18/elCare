@@ -44,7 +44,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.userDetailActivity,
                 R.id.currentStatusActivity,
                 R.id.healthDetailActivity,
-                R.id.monitor,
+                R.id.monitorBtn,
                 R.id.loginActivity,
                 R.id.aboutFragment
             ), drawerLayout
@@ -85,5 +85,10 @@ class HomeActivity : AppCompatActivity() {
                 }
         }
         return true
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 }

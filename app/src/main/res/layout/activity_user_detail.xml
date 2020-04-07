@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <Button
-        android:id="@+id/monitor"
+        android:id="@+id/monitorBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -63,7 +63,7 @@
         app:layout_constraintVertical_bias="0.239" />
 
     <Button
-        android:id="@+id/show"
+        android:id="@+id/showBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -92,21 +92,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pic" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="76dp"
-        android:layout_height="43dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="351dp"
-        android:layout_height="212dp"
+        android:layout_width="347dp"
+        android:layout_height="169dp"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,7 +139,7 @@
             <TextView
                 android:id="@+id/contactAddress"
                 android:layout_width="match_parent"
-                android:layout_height="104dp"
+                android:layout_height="match_parent"
                 android:background="#070707"
                 android:hint="@string/contact_address"
                 android:textColor="#FBF9F9"
@@ -158,5 +147,17 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="76dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="2dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactTV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,9 +26,8 @@ class UserDetailActivity : AppCompatActivity() {
 
         val viewmodel = ViewModelProvider(this).get(UserDetailViewModel::class.java)
         viewmodel.getPerson()
-
         viewmodel._person.observe(this, Observer {
-            progressBar2.visibility = View.VISIBLE
+            progressBar2.visibility = View.INVISIBLE
             contactTV.visibility = View.VISIBLE
             pic.visibility = View.VISIBLE
             name.text = it.name
@@ -38,16 +37,16 @@ class UserDetailActivity : AppCompatActivity() {
             contactAddress.text = it.contactAddress
             contactPhone.text = it.contactPhone.toString()
             Glide.with(this).load(it.pic).into(pic)
-            show.isEnabled = true
-            monitor.isEnabled = true
+            showBtn.isEnabled = true
+            monitorBtn.isEnabled = true
         })
 
-        show.setOnClickListener {
+        showBtn.setOnClickListener {
             val intent = Intent(this, CurrentStatusActivity::class.java)
             startActivity(intent)
         }
 
-        monitor.setOnClickListener {
+        monitorBtn.setOnClickListener {
             val intent = Intent(this, MonitorActivity::class.java)
             startActivity(intent)
         }
@@ -74,5 +73,10 @@ class UserDetailActivity : AppCompatActivity() {
             finish()
         }
         return true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        finish()
     }
 }

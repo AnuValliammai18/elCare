@@ -40,11 +40,14 @@ class HealthDetailActivity : AppCompatActivity() {
         viewModel.getHealthRecord()
     }
 
+    override fun onPause() {
+        super.onPause()
+        finish()
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
         }
         return true
     }
-
 }
