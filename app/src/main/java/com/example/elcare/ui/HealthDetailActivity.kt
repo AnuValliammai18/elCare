@@ -44,6 +44,7 @@ class HealthDetailActivity : AppCompatActivity() {
         super.onPause()
         finish()
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()

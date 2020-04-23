@@ -2,17 +2,14 @@ package com.example.elcare.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.elcare.R
 import com.example.elcare.viewmodel.UserDetailViewModel
-import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.activity_user_detail.*
 
 
@@ -50,22 +47,6 @@ class UserDetailActivity : AppCompatActivity() {
             val intent = Intent(this, MonitorActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.mainmenu, menu)
-        val signoutBtn = (menu?.findItem(R.id.app_signout_button)?.actionView as ImageButton).also {
-            it.setBackgroundResource(R.drawable.power_off_foreground)
-        }
-        signoutBtn.setOnClickListener {
-            AuthUI.getInstance().signOut(this)
-                .addOnCompleteListener {
-                    val intent = Intent(this, LoginActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                    startActivity(intent)
-                }
-        }
-        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

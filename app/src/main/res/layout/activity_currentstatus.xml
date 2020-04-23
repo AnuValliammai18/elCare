@@ -1,116 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121111"
-    tools:context=".ui.CurrentStatusActivity">
+    android:background="@drawable/bluebg">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="123dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="12dp"
-        android:enabled="false"
-        android:text="@string/glucose_level"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/glucoseLevel"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.github.lzyzsd.circleprogress.DonutProgress
-        android:id="@+id/bpLevel"
-        android:layout_width="161dp"
-        android:layout_height="165dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="164dp"
-        app:donut_finished_color="#0C7053"
-        app:donut_inner_bottom_text_color="#FFFFFF"
-        app:donut_inner_bottom_text_size="15dp"
-        app:donut_show_text="true"
-        app:donut_text_color="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glucoseLevel"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="154dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="12dp"
-        android:text="@string/heart_beat_rate"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/heartbeatLevel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
-
-    <ImageButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/detailBtn"
-        android:layout_width="42dp"
-        android:layout_height="48dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_rounded"
         android:padding="3dp"
-        android:theme="@style/AppTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028"
+        app:backgroundTint="#FF8135"
         app:srcCompat="@drawable/viewlist"
         tools:ignore="VectorDrawableCompat" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/bp_rate"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bpLevel" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        tools:context=".ui.CurrentStatusActivity">
 
-    <com.github.lzyzsd.circleprogress.DonutProgress
-        android:id="@+id/heartbeatLevel"
-        android:layout_width="165dp"
-        android:layout_height="172dp"
-        android:layout_gravity="clip_vertical"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:donut_finished_color="#0C7053"
-        app:donut_inner_bottom_text_size="15dp"
-        app:donut_text_color="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/glucoseLevel"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        <ImageView
+            android:id="@+id/clock"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_clock" />
 
-    <com.github.lzyzsd.circleprogress.DonutProgress
-        android:id="@+id/glucoseLevel"
-        android:layout_width="162dp"
-        android:layout_height="169dp"
-        app:donut_finished_color="#0C7053"
-        app:donut_inner_bottom_text_size="15dp"
-        app:donut_show_text="true"
-        app:donut_text_color="#F6F2F2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/heartbeatLevel"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/glucoseLevel"
+            android:layout_width="162dp"
+            android:layout_height="169dp"
+            app:donut_finished_color="#FF8135"
+            app:donut_inner_bottom_text_size="15dp"
+            app:donut_show_text="true"
+            app:donut_text_color="#050505"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/heartbeatLevel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.409" />
 
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/bpLevel"
+            android:layout_width="161dp"
+            android:layout_height="165dp"
+            android:layout_marginTop="22dp"
+            app:donut_finished_color="#FF8135"
+            app:donut_inner_bottom_text_color="#FFFFFF"
+            app:donut_inner_bottom_text_size="15dp"
+            app:donut_show_text="true"
+            app:donut_text_color="#0E0D0D"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/glucoseLevel"
+            app:layout_constraintVertical_bias="0.01" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="123dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="8dp"
+            android:enabled="false"
+            android:text="@string/glucose_level"
+            android:textColor="#0B0A0A"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/glucoseLevel"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="154dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/heart_beat_rate"
+            android:textColor="#0E0E0E"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/heartbeatLevel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/heartbeatLevel"
+            android:layout_width="165dp"
+            android:layout_height="172dp"
+            android:layout_gravity="clip_vertical"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:donut_finished_color="#FF8135"
+            app:donut_inner_bottom_text_size="15dp"
+            app:donut_text_color="#050505"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/glucoseLevel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.412" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/bp_rate"
+            android:textColor="#040303"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bpLevel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

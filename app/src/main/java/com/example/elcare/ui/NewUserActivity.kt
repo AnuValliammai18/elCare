@@ -9,9 +9,11 @@ import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.elcare.R
+import com.example.elcare.SigninActivity
 import com.example.elcare.model.Person
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
@@ -40,12 +42,12 @@ class NewUserActivity : AppCompatActivity() {
             if (name.text != null && age.text != null && contactName.text != null && contactPhone.text != null) {
                 create.isEnabled = false
                 progressBar3.visibility = View.VISIBLE
-                name.isEnabled = false
-                age.isEnabled = false
-                contactName.isEnabled = false
-                contactPhone.isEnabled = false
-                contactAddress2.isEnabled = false
-                email.isEnabled = false
+                nameLayout.isEnabled = false
+                ageLayout.isEnabled = false
+                contactnameLayout.isEnabled = false
+                contactphoneLayout.isEnabled = false
+                contactaddressLayout.isEnabled = false
+                emailLayout.isEnabled = false
                 uploadData()
             } else
                 Toast.makeText(this, "Fill all Data", Toast.LENGTH_SHORT).show()
@@ -64,7 +66,7 @@ class NewUserActivity : AppCompatActivity() {
                     val age = age.text.toString()
                     val contactName = contactName.text.toString()
                     val contactPhone = contactPhone.text.toString()
-                    val contactAddress = contactAddress2.text.toString()
+                    val contactAddress = contactAddress.text.toString()
                     val email = email.text.toString()
                     val user = Person(
                         age.toInt(),
@@ -109,12 +111,24 @@ class NewUserActivity : AppCompatActivity() {
             it.setBackgroundResource(R.drawable.power_off_foreground)
         }
         signoutBtn.setOnClickListener {
-            AuthUI.getInstance().signOut(this)
-                .addOnCompleteListener {
-                    val intent = Intent(this, LoginActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                    startActivity(intent)
+            val builder = AlertDialog.Builder(this)
+            builder.apply {
+                setTitle("Logout")
+                setMessage("Are you sure you want to logout?")
+                setCancelable(false)
+                setPositiveButton(
+                    "Logout"
+                ) { _, _ ->
+                    AuthUI.getInstance().signOut(this@NewUserActivity)
+                        .addOnCompleteListener {
+                            startActivity(Intent(this@NewUserActivity, SigninActivity::class.java))
+                            this@NewUserActivity.finish()
+                        }
                 }
+                setNegativeButton("No") { _, _ ->
+                }
+            }
+            builder.show()
         }
         return true
     }

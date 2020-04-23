@@ -23,7 +23,7 @@ class MonitorActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         upload.setOnClickListener {
-            if (bpText.text.toString() != "" && glucoseText.text.toString() != "" && heartBeatText.text.toString() != "") {
+            if (bpText.text.toString().isNotEmpty() && glucoseText.text.toString().isNotEmpty() && heartBeatText.text.toString().isNotEmpty()) {
                 upload.isEnabled = false
                 val bp = bpText.text.toString()
                 val glucose = glucoseText.text.toString()
@@ -37,9 +37,6 @@ class MonitorActivity : AppCompatActivity() {
                     FirebaseDatabase.getInstance().reference.child(uid).child("HealthRecord")
                 databaseReference.push().setValue(healthRecord)
                 Toast.makeText(this, "Data Uploaded", Toast.LENGTH_SHORT).show()
-                bpText.text.clear()
-                glucoseText.text.clear()
-                heartBeatText.text.clear()
                 startActivity(Intent(this, HomeActivity::class.java))
             } else {
                 Toast.makeText(
@@ -48,6 +45,9 @@ class MonitorActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+            bpText.text?.clear()
+            glucoseText.text?.clear()
+            heartBeatText.text?.clear()
         }
     }
 

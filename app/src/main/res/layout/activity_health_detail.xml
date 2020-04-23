@@ -11,13 +11,13 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#040404"
+        android:background="#51B5EC"
         android:theme="@style/AppTheme"
         app:tabIconTint="@color/colorAccent"
-        app:tabIndicatorColor="#E4277A"
+        app:tabIndicatorColor="#E64A19"
         app:tabMode="fixed"
         app:tabTextAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:tabTextColor="#FFFDFD" />
+        app:tabTextColor="#070707" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager2"

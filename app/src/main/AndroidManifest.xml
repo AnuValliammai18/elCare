@@ -12,7 +12,22 @@
         android:roundIcon="@mipmap/elcarelauncher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.LoginActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".SigninActivity"
+            android:screenOrientation="fullSensor" />
         <activity android:name=".ui.NewUserActivity" />
         <activity android:name=".ui.HealthDetailActivity" />
         <activity android:name=".ui.CurrentStatusActivity" />
@@ -21,13 +36,6 @@
         <activity
             android:name=".ui.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

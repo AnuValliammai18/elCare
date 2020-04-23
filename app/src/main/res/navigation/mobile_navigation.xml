@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     android:label="Home"
-    app:startDestination="@id/blankFragment">
+    app:startDestination="@id/tipsFragment">
 
     <activity
         android:id="@+id/userDetailActivity"
@@ -25,14 +25,10 @@
         android:name="com.example.elcare.ui.MonitorActivity"
         android:label="MonitorActivity" />
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.example.elcare.ui.fragments.BlankFragment"
+        android:id="@+id/tipsFragment"
+        android:name="com.example.elcare.ui.fragments.TipsFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_blank" />
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="com.example.elcare.ui.LoginActivity"
-        android:label="LoginActivity" />
+        tools:layout="@layout/fragment_tips" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.elcare.ui.fragments.AboutFragment"

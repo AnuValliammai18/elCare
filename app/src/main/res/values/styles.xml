@@ -6,7 +6,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#222225</item>
         <item name="colorPrimaryDark">#0B0A0A</item>
-        <item name="colorAccent">#DA2274</item>
+        <item name="colorAccent">#DD623B</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -18,4 +20,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/zoom_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/static_animation</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="MyTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:windowBackground">@drawable/bluebg</item>
+    </style>
 </resources>
